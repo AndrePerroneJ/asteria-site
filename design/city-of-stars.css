@@ -1,0 +1,95 @@
+/* City of Stars
+   Paleta do portfólio · magic hour, vintage e palco de jazz
+   Montenegrin Gothic One: OFL, ver fonts/MontenegrinGothicOne-OFL.txt
+   Callysthenes © 2024 Jrray Studio. Vactory Sans © Flawless And Co. */
+
+@font-face {
+  font-family: "Montenegrin Gothic One";
+  src: url("fonts/MontenegrinGothicOne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Callysthenes";
+  src: url("fonts/callysthenes-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Callysthenes";
+  src: url("fonts/callysthenes-italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Callysthenes";
+  src: url("fonts/callysthenes-semi-bold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Callysthenes";
+  src: url("fonts/callysthenes-semi-bold-italic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vactory Sans";
+  src: url("fonts/VactorySans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Bases */
+  --color-ink: #07070d; /* fundo do clube */
+  --color-midnight: #0f1a36; /* céu do píer */
+  --color-asphalt: #191f2d; /* cards, superfícies */
+  --color-dusk: #574c7a; /* bordas, divisores */
+
+  /* Texto */
+  --color-lamp: #f6f1e7; /* texto principal */
+  --color-piano: #e9ceb6; /* texto secundário */
+  --color-lilac: #a98fb0; /* legendas */
+
+  /* Acentos */
+  --color-dress: #e9c22e; /* CTA principal */
+  --color-ember: #e8875c; /* horizonte laranja */
+  --color-rose: #c9767a; /* horizonte rosado */
+  --color-neon: #c13fa6; /* glow, bordas */
+  --color-spotlight: #1e9bd7; /* links, foco */
+  --color-velvet: #442684; /* hover, seleção */
+
+  /* Marca. Só no wordmark e no símbolo. */
+  --color-wordmark: #fefefe;
+  --color-mark: #662eca;
+
+  --font-display: "Montenegrin Gothic One", "Palatino Linotype", Palatino, serif;
+  --font-editorial: "Callysthenes", "Iowan Old Style", Palatino, serif;
+  --font-ui: "Vactory Sans", "Avenir Next", "Segoe UI", sans-serif;
+
+  /* Barra da folha. Stops amostrados no miolo da faixa. */
+  --gradient-magic-hour: linear-gradient(
+    90deg,
+    #111a3a 0%,
+    #241f56 12.5%,
+    #35236f 25%,
+    #4e3088 37.5%,
+    #775a9a 50%,
+    #9e84ab 62.5%,
+    #ba8193 75%,
+    #d17974 87.5%,
+    #e5855f 100%
+  );
+}

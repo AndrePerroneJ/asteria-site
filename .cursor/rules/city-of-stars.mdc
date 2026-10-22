@@ -1,0 +1,18 @@
+---
+description: Identidade visual City of Stars do portfólio
+alwaysApply: true
+---
+
+# City of Stars
+
+Paleta do portfólio: magic hour, vintage e palco de jazz. Tokens em `design/city-of-stars.css`. Use só essas cores.
+
+- Fundo da página: `--color-ink`. Céu e seções profundas: `--color-midnight`.
+- Cards e superfícies: `--color-asphalt`. Bordas e divisores: `--color-dusk`.
+- Texto principal: `--color-lamp`. Secundário: `--color-piano`. Legendas: `--color-lilac`.
+- CTA principal: `--color-dress`. Links e foco: `--color-spotlight`. Hover e seleção: `--color-velvet`.
+- Glow e bordas de destaque: `--color-neon`. Horizonte: `--color-ember` e `--color-rose`.
+- Atmosfera contínua: `--gradient-magic-hour`.
+- O wordmark usa `--color-wordmark` (`#FEFEFE`) e o símbolo `--color-mark` (`#662ECA`). Essas duas cores ficam no logo. Texto e botões continuam na paleta.
+
+Não introduza cinza neutro, branco puro ou acento fora desta paleta.
