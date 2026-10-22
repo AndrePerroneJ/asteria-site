@@ -7,18 +7,15 @@ alwaysApply: true
 
 Arquivos em `design/logo/` e `design/fonts/`. A fonte do vetor é `asteria.ai`.
 
-O nome não se recompõe em fonte. O E do wordmark são três barras: a do meio é mais curta e alinhada à esquerda. Símbolo `#662ECA`, letras `#FEFEFE`, fundo `--color-ink`.
+O wordmark oficial fica em arquivo. O E são três barras, a do meio mais curta e alinhada à esquerda.
 
-- Montenegrin Gothic One: títulos de seção, só grandes.
-- Callysthenes (regular, semibold e itálicos): texto de leitura.
-- Vactory Sans Regular: navegação, botões e legendas de interface.
+Landing em `src/`. Logo: `design/logo/asteria-wordmark.svg`. Não recriar o nome em texto.
 
-Landing de uma página, nesta ordem:
+1. Header fixo — logo, `stars / griffith / la / home`, `[ Iniciar Projeto ]`.
+2. Palco — título, CTA `> npm run showtime`, terminal `asteria.js`.
+3. Dualidade — Hora Mágica e Arquitetura Defensiva, fundo `--color-midnight`.
+4. Especificações — quatro cards `--color-asphalt`.
+5. Sonho — `function dream()` e `RangeError`.
+6. Footer — logo, `// é aqui que começa.`, links em `--color-spotlight`.
 
-1. Abertura — wordmark, uma frase, `--gradient-magic-hour`.
-2. Carta — título display e um parágrafo em `--color-midnight`.
-3. Repertório — três a seis peças. Cada uma: nome, ano, uma linha. Superfície `--color-asphalt`.
-4. Em foco — uma peça, borda `--color-neon`, horizonte rose e ember.
-5. Contato — um CTA `--color-dress`.
-
-Não inventar biografia, peças ou endereço. Onde o conteúdo ainda não existe, manter o lugar e o rótulo do que falta.
+Títulos em Kharms Display. Texto em Inter. Código e metadados em JetBrains Mono. O cursor da marca é o Ξ em `--color-neon`.

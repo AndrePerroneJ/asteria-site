@@ -79,17 +79,12 @@
   --font-editorial: "Callysthenes", "Iowan Old Style", Palatino, serif;
   --font-ui: "Vactory Sans", "Avenir Next", "Segoe UI", sans-serif;
 
-  /* Barra da folha. Stops amostrados no miolo da faixa. */
   --gradient-magic-hour: linear-gradient(
     90deg,
-    #111a3a 0%,
-    #241f56 12.5%,
-    #35236f 25%,
-    #4e3088 37.5%,
-    #775a9a 50%,
-    #9e84ab 62.5%,
-    #ba8193 75%,
-    #d17974 87.5%,
-    #e5855f 100%
+    #0f1a36 0%,
+    #442684 35%,
+    #a98fb0 68%,
+    #c9767a 85%,
+    #e8875c 100%
   );
 }

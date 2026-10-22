@@ -2,19 +2,26 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 
-const root = path.resolve(__dirname);
+const root = path.resolve(__dirname, "dist");
 const port = Number(process.env.PORT) || 3000;
 
 const types = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
+  ".js": "text/javascript; charset=utf-8",
+  ".mjs": "text/javascript; charset=utf-8",
   ".svg": "image/svg+xml",
   ".png": "image/png",
   ".jpg": "image/jpeg",
   ".jpeg": "image/jpeg",
+  ".webp": "image/webp",
+  ".woff": "font/woff",
+  ".woff2": "font/woff2",
   ".ttf": "font/ttf",
   ".otf": "font/otf",
   ".txt": "text/plain; charset=utf-8",
+  ".json": "application/json; charset=utf-8",
+  ".mp4": "video/mp4",
 };
 
 const server = http.createServer((request, response) => {
