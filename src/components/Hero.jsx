@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Logo } from "./Logo.jsx";
 
-const DESK = "/video/asteria-intro-desktop.mp4";
-const PHONE = "/video/asteria-intro-mobile.mp4";
+const DESK = "/video/asteria-intro-desktop.mp4?v=2";
+const PHONE = "/video/asteria-intro-mobile.mp4?v=2";
 const PHONE_QUERY = "(max-width: 767px)";
 
 function filmFor(matches) {
