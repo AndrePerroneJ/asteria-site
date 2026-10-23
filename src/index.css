@@ -130,6 +130,34 @@ body {
   opacity: 1;
 }
 
+.hero-down {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 1.75rem;
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  transform: translateX(-50%);
+  color: var(--color-lamp);
+}
+
+.hero-down svg {
+  animation: hero-bob 1.6s ease-in-out infinite;
+}
+
+@keyframes hero-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(7px);
+  }
+}
+
 .site-header {
   opacity: 0;
   pointer-events: none;
@@ -155,6 +183,10 @@ body {
 
   .hero-mark {
     opacity: 1;
+  }
+
+  .hero-down svg {
+    animation: none;
   }
 }
 

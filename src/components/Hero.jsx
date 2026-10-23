@@ -93,7 +93,7 @@ export function Hero() {
   return (
     <section
       id="palco"
-      className={`relative h-dvh overflow-hidden border-b border-dusk bg-ink${ended ? " is-ended" : ""}`}
+      className={`relative h-dvh overflow-hidden bg-ink${ended ? " is-ended" : ""}`}
       aria-labelledby="abertura-title"
     >
       <h1 id="abertura-title" className="sr-only">
@@ -112,6 +112,11 @@ export function Hero() {
       <div className="hero-mark pointer-events-none absolute inset-0 grid place-items-center px-6">
         <Logo className="h-14 w-auto max-w-[78vw] md:h-20" />
       </div>
+      <a href="#dualidade" className="hero-down" aria-label="Descer">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+          <path d="M5 9l7 7 7-7" fill="none" stroke="currentColor" strokeWidth="1.4" />
+        </svg>
+      </a>
     </section>
   );
 }
