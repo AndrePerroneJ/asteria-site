@@ -17,6 +17,42 @@ const EMPTY = {
 const ERROR = "Algo saiu do tom. Confira os campos marcados e tente de novo.";
 const SUCCESS = "Recebido. Em breve, a cortina sobe. Entraremos em contato pelo WhatsApp.";
 
+const TIMELINE_LABEL = {
+  "1m": "Até 1 mês",
+  "3m": "1 a 3 meses",
+  "sem-pressa": "Sem pressa",
+};
+
+function validate(values) {
+  const fields = {};
+  const name = values.name.trim();
+  const company = values.company.trim();
+  const email = values.email.trim();
+  const segment = values.segment.trim();
+  const siteUrl = values.siteUrl.trim();
+
+  if (name.length < 2) fields.name = "Informe o nome.";
+  if (company.length < 2) fields.company = "Informe a empresa.";
+  if (values.whatsapp.replace(/\D/g, "").length < 10) fields.whatsapp = "Informe um WhatsApp válido.";
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) fields.email = "Confira o e-mail.";
+  if (segment.length < 2) fields.segment = "Informe o segmento.";
+  if (values.hasSite !== "sim" && values.hasSite !== "nao") fields.hasSite = "Diga se já tem site.";
+  if (values.hasSite === "sim" && !/^https?:\/\/\S+$/i.test(siteUrl)) fields.siteUrl = "Informe o link do site atual.";
+  if (!TIMELINE_LABEL[values.timeline]) fields.timeline = "Escolha um prazo.";
+
+  return fields;
+}
+
+function openWhatsApp(message) {
+  const link = document.createElement("a");
+  link.href = whatsappLink(message);
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+}
+
 export function Inquiry() {
   const [values, setValues] = useState(EMPTY);
   const [errors, setErrors] = useState({});
@@ -26,38 +62,43 @@ export function Inquiry() {
     setValues((current) => ({ ...current, [name]: value }));
   }
 
-  async function onSubmit(event) {
+  function onSubmit(event) {
     event.preventDefault();
-    setStatus("sending");
     setErrors({});
 
-    try {
-      const response = await fetch("/api/contato", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
-      const payload = await response.json().catch(() => ({}));
-      if (!response.ok || !payload.ok) {
-        setErrors(payload.fields || {});
-        setStatus("error");
-        return;
-      }
+    if (values.website.trim()) {
       setStatus("sent");
-      const lines = [
-        "Olá, quero iniciar um projeto com a Asteria.",
-        values.name && `Nome: ${values.name}`,
-        values.company && `Empresa: ${values.company}`,
-        values.whatsapp && `WhatsApp: ${values.whatsapp}`,
-        values.email && `E-mail: ${values.email}`,
-        values.segment && `Segmento: ${values.segment}`,
-        values.siteUrl && `Site: ${values.siteUrl}`,
-        values.project && values.project,
-      ].filter(Boolean);
-      window.open(whatsappLink(lines.join("\n")), "_blank", "noopener,noreferrer");
-    } catch {
-      setStatus("error");
+      return;
     }
+
+    const fields = validate(values);
+    if (Object.keys(fields).length) {
+      setErrors(fields);
+      setStatus("error");
+      return;
+    }
+
+    const lines = [
+      "Olá, quero iniciar um projeto com a Asteria.",
+      `Nome: ${values.name.trim()}`,
+      `Empresa: ${values.company.trim()}`,
+      `WhatsApp: ${values.whatsapp.trim()}`,
+      values.email.trim() && `E-mail: ${values.email.trim()}`,
+      `Segmento: ${values.segment.trim()}`,
+      values.hasSite === "sim" ? "Já tem site: sim" : "Já tem site: não",
+      values.siteUrl.trim() && `Site: ${values.siteUrl.trim()}`,
+      `Prazo: ${TIMELINE_LABEL[values.timeline]}`,
+      values.project.trim(),
+    ].filter(Boolean);
+
+    openWhatsApp(lines.join("\n"));
+    setStatus("sent");
+
+    fetch("/api/contato", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(values),
+    }).catch(() => {});
   }
 
   return (

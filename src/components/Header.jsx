@@ -39,7 +39,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-40 ${scrolled ? "bg-black/80" : ""}`}>
+    <header className={`fixed inset-x-0 top-0 z-40 ${scrolled ? "bg-[rgba(0,0,0,0.8)] backdrop-blur-[16px]" : ""}`}>
       <div className="px-[var(--gutter)] pt-4 pb-3">
         <div className="frame flex items-center gap-6">
           <a href="#palco" aria-label="Asteria Code, início">
@@ -52,9 +52,6 @@ export function Header() {
             Iniciar projeto
           </a>
         </div>
-        <nav aria-label="Seções" className="frame mt-4 flex gap-4 overflow-x-auto md:hidden">
-          <Links active={active} />
-        </nav>
       </div>
     </header>
   );

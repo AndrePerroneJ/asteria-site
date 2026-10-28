@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 const QUESTIONS = [
-  { id: "prazo", question: "Quanto tempo leva para o site ficar pronto?", answer: "O prazo depende do tamanho do projeto. Ele é definido já na primeira conversa." },
+  { id: "prazo", question: "Quanto tempo leva para o site ficar pronto?", answer: "Sites institucionais: de 3 a 6 semanas." },
   { id: "custo", question: "Quanto custa?", answer: "Cada projeto é sob medida, então o valor depende do escopo. Depois da conversa inicial, você recebe uma proposta clara, sem surpresas." },
   { id: "seguranca", question: "Por que segurança importa num site institucional?", answer: "Sites vulneráveis são invadidos e usados para golpes com o nome da empresa, e o Google pode marcá-los como perigosos. Proteger o site é proteger a sua reputação." },
   { id: "celular", question: "Funciona bem no celular?", answer: "Sim. O site é pensado primeiro para o celular, que é onde está a maior parte dos seus clientes." },
   { id: "dominio", question: "Vocês cuidam de domínio e hospedagem?", answer: "Sim. Configuramos tudo, e você não precisa se preocupar com a parte técnica." },
-  { id: "atualizar", question: "Consigo atualizar o site depois?", answer: "O jeito de atualizar fica combinado na proposta, antes da estreia." },
-  { id: "problema", question: "E se der algum problema depois do lançamento?", answer: "Depois da estreia, o estúdio acompanha o site." },
+  { id: "atualizar", question: "Consigo atualizar o site depois?", answer: "Sim. Nos 30 dias de suporte, os ajustes são com a gente. Depois, o plano mensal de manutenção segue com as atualizações." },
+  { id: "problema", question: "E se der algum problema depois do lançamento?", answer: "30 dias de suporte inclusos; depois, plano mensal de manutenção." },
 ];
 
 export function Faq() {

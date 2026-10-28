@@ -22,6 +22,7 @@ const types = {
   ".otf": "font/otf",
   ".txt": "text/plain; charset=utf-8",
   ".json": "application/json; charset=utf-8",
+  ".xml": "application/xml; charset=utf-8",
   ".mp4": "video/mp4",
 };
 
@@ -47,8 +48,15 @@ const server = http.createServer((request, response) => {
 
   fs.readFile(filePath, (error, body) => {
     if (error) {
-      response.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
-      response.end("Not found");
+      fs.readFile(path.join(root, "404.html"), (missing, page) => {
+        if (missing) {
+          response.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
+          response.end("Not found");
+          return;
+        }
+        response.writeHead(404, { "Content-Type": "text/html; charset=utf-8" });
+        response.end(page);
+      });
       return;
     }
 
