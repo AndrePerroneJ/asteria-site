@@ -1,119 +1,47 @@
-import { useEffect, useRef, useState } from "react";
-import { Logo } from "./Logo.jsx";
-
-const DESK = "/video/asteria-intro-desktop.mp4?v=2";
-const PHONE = "/video/asteria-intro-mobile.mp4?v=2";
-const PHONE_QUERY = "(max-width: 767px)";
-
-function filmFor(matches) {
-  return matches ? PHONE : DESK;
-}
+import { useEffect, useState } from "react";
 
 export function Hero() {
-  const videoRef = useRef(null);
-  const endedRef = useRef(false);
-  const [ended, setEnded] = useState(false);
-  const [src, setSrc] = useState(() => filmFor(window.matchMedia(PHONE_QUERY).matches));
+  const [arrow, setArrow] = useState(true);
 
   useEffect(() => {
-    const phone = window.matchMedia(PHONE_QUERY);
-
-    function onLayout() {
-      const next = filmFor(phone.matches);
-      if (endedRef.current || next === src) return;
-      setEnded(false);
-      setSrc(next);
+    function onScroll() {
+      setArrow(window.scrollY < window.innerHeight * 0.55);
     }
 
-    phone.addEventListener("change", onLayout);
-    return () => phone.removeEventListener("change", onLayout);
-  }, [src]);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return undefined;
-
-    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    endedRef.current = false;
-
-    function reveal() {
-      endedRef.current = true;
-      setEnded(true);
-    }
-
-    function holdStill() {
-      reveal();
-      video.pause();
-    }
-
-    function easeOut() {
-      if (!video.duration || video.duration - video.currentTime > 1.2) return;
-      reveal();
-    }
-
-    function startFilm() {
-      if (motion.matches || video.ended) return;
-      video.muted = true;
-      video.defaultMuted = true;
-      video.playsInline = true;
-      const attempt = video.play();
-      if (attempt) {
-        attempt
-          .then(() => {
-            if (video.duration && video.duration - video.currentTime <= 1.2) return;
-            endedRef.current = false;
-            setEnded(false);
-          })
-          .catch(() => {});
-      }
-    }
-
-    function onMotion() {
-      if (motion.matches) holdStill();
-      else startFilm();
-    }
-
-    video.preload = motion.matches ? "none" : "auto";
-    video.addEventListener("ended", holdStill);
-    video.addEventListener("timeupdate", easeOut);
-    video.addEventListener("canplay", startFilm);
-    motion.addEventListener("change", onMotion);
-
-    if (motion.matches) holdStill();
-    else startFilm();
-
-    return () => {
-      video.removeEventListener("ended", holdStill);
-      video.removeEventListener("timeupdate", easeOut);
-      video.removeEventListener("canplay", startFilm);
-      motion.removeEventListener("change", onMotion);
-    };
-  }, [src]);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <section
-      id="palco"
-      className={`relative h-dvh overflow-hidden bg-ink${ended ? " is-ended" : ""}`}
-      aria-label="Abertura"
-    >
-      <video
-        ref={videoRef}
-        key={src}
-        className="hero-film pointer-events-none absolute inset-0 h-full w-full object-cover"
-        src={src}
-        muted
-        playsInline
-        aria-hidden="true"
-        tabIndex={-1}
-      />
-      <div className="hero-mark pointer-events-none absolute inset-0 grid place-items-center px-6">
-        <Logo className="h-14 w-auto max-w-[78vw] md:h-20" />
+    <section id="palco" className="relative flex min-h-svh items-center px-[var(--gutter)] pt-[252px] pb-24 lg:pt-48" aria-labelledby="apresentacao-title">
+      <div className="frame grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
+        <div id="constelacao-hero" className="order-1 h-[45vh] w-full lg:order-2 lg:h-[min(68vh,620px)]" aria-hidden="true" />
+        <div className="order-2 lg:order-1">
+          <p className="label">Estúdio boutique · Guarulhos</p>
+          <h1 id="apresentacao-title" className="display mt-6">
+            Seu negócio já é referência. O site precisa estar à altura.
+          </h1>
+          <p className="body mt-6 max-w-[480px]">
+            Sites sob medida, com visual autoral e proteção desde a primeira linha de código. Para marcas que não cabem em template.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+            <a href="#iniciar" className="btn-primary">
+              Iniciar um projeto
+            </a>
+            <a href="#repertorio" className="ghost">
+              Ver o repertório →
+            </a>
+          </div>
+        </div>
       </div>
-      <a href="#manifesto" className="hero-down" aria-label="Descer">
-        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
-          <path d="M5 9l7 7 7-7" fill="none" stroke="currentColor" strokeWidth="1.4" />
+      {arrow ? (
+      <a href="#repertorio" className="hero-down" aria-label="Descer">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M5 9l7 7 7-7" fill="none" stroke="currentColor" strokeWidth="1.5" />
         </svg>
       </a>
+      ) : null}
     </section>
   );
 }

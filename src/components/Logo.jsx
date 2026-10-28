@@ -5,7 +5,7 @@ export function Logo({ className = "h-8" }) {
     <img
       src={wordmark}
       alt=""
-      className={`${className} w-auto [filter:drop-shadow(0_0_14px_rgba(193,63,166,0.32))]`}
+      className={`${className} w-auto`}
     />
   );
 }

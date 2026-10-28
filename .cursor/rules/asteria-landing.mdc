@@ -11,13 +11,16 @@ O wordmark oficial fica em arquivo. O E são três barras, a do meio mais curta 
 
 Landing em `src/`. Logo: `design/logo/asteria-wordmark.svg`. Não recriar o nome em texto.
 
-1. Header fixo — logo, `stars / griffith / la / home`, `[ Iniciar Projeto ]`. O header só aparece no scroll.
-2. Palco — vídeo de abertura, depois a logo parada e a seta para descer.
-3. Manifesto — o nome Asteria, pelo arquivo da logo, e o propósito em linguagem clara: estúdio boutique de design e segurança.
-4. Dualidade — a arte e a fortaleza, em tom técnico. Fundo `--color-midnight`.
-5. Especificações — grelha assimétrica com o que o cliente leva: zero brechas, velocidade, estética autoral, infraestrutura protegida.
-6. Repertório — peças com imagem real. Sem inventar nome, ano ou cliente.
-7. Sonho — `function dream()` e `RangeError`.
-8. Footer — fecha a noite e convida ao contato. Logo, `// é aqui que começa.`, links em `--color-spotlight`.
+1. Header fixo, transparente, fundo `rgba(0,0,0,0.8)` ao rolar. Logo, Repertório, Processo, Escopo, Contato e um botão “Iniciar projeto”.
+2. Hero — rótulo, título e subtítulo à esquerda, constelação à direita. A constelação forma o E e depois se dispersa. `prefers-reduced-motion` deixa o E parado.
+3. Repertório — peças reais, em zigue-zague, sem card. Estudo conceitual leva a tag “Estudo de estúdio”. Sem inventar cliente, ano ou imagem.
+4. Dualidade — arte e fortaleza, quatro benefícios e a linha técnica. Sem caixas.
+5. Processo — conversa, direção, construção, estreia.
+6. Para quem — negócios que já têm nome. Sem lista de segmentos inventada.
+7. Escopo — o que entra no projeto, com a estrela violeta. Sem prazo, preço ou dias de suporte inventados.
+8. Formulário — linha inferior, validado no servidor, com honeypot e limite de envios.
+9. Dúvidas — acordeão, separado por fio.
+10. Easter egg `dream()`.
+11. Footer — `// é aqui que começa.`, a noite fecha aqui, links fantasma.
 
-Títulos em Kharms Display. Texto em Inter. Código e metadados em JetBrains Mono. O cursor da marca é o Ξ em `--color-neon`.
+Títulos e texto em General Sans. Código e a linha técnica em JetBrains Mono.

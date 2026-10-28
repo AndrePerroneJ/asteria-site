@@ -1,21 +1,21 @@
-import { Logo } from "./Logo.jsx";
-
 export function Manifesto() {
   return (
-    <section id="manifesto" className="border-b border-dusk bg-ink px-5 py-20 md:px-12 md:py-28 lg:px-16" aria-labelledby="manifesto-title">
-      <Logo className="h-12 w-auto md:h-16" />
-      <h1 id="manifesto-title" className="sr-only">
-        Asteria
+    <section id="apresentacao" className="border-b border-dusk bg-ink px-5 py-20 md:px-12 md:py-28 lg:px-16" aria-labelledby="apresentacao-title">
+      <p className="font-mono text-xs tracking-[0.18em] text-lilac">estúdio boutique · guarulhos</p>
+      <h1 id="apresentacao-title" className="mt-6 max-w-[16ch] font-display text-[clamp(2.5rem,5.2vw,4.4rem)] leading-[0.96] text-lamp">
+        Seu negócio já é referência. O site precisa estar à altura.
       </h1>
-      <p className="mt-8 max-w-[16ch] font-display text-[clamp(2.6rem,5vw,4.4rem)] leading-[0.95] text-lamp">
-        Um estúdio boutique focado em design e segurança.
+      <p className="mt-6 max-w-[42ch] text-lg leading-relaxed text-piano">
+        Sites sob medida, com visual autoral e proteção desde a primeira linha de código. Para marcas que não cabem em template.
       </p>
-      <p className="mt-6 max-w-[38ch] text-lg leading-relaxed text-piano">
-        Sites sob medida. O visual é próprio. A proteção entra desde a primeira linha.
-      </p>
-      <a href="#contato" className="showtime mt-10 inline-block px-5 py-3 font-mono text-sm tracking-wide">
-        Iniciar um projeto
-      </a>
+      <div className="mt-10 flex flex-wrap gap-3">
+        <a href="#iniciar" className="showtime inline-block px-5 py-3 font-mono text-sm tracking-wide">
+          Iniciar um projeto
+        </a>
+        <a href="#repertorio" className="inline-block border border-dusk px-5 py-3 font-mono text-sm tracking-wide text-lamp transition-colors hover:bg-velvet">
+          Ver o repertório
+        </a>
+      </div>
     </section>
   );
 }

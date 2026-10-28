@@ -1,18 +1,18 @@
 ---
-description: Identidade visual City of Stars do portfólio
+description: Sistema visual da Asteria — preto, violeta do E e faísca
 alwaysApply: true
 ---
 
-# City of Stars
+# Asteria
 
-Paleta do portfólio: magic hour, vintage e palco de jazz. Tokens em `design/city-of-stars.css`. Use só essas cores.
+Fundo `#000000` (`--color-void`). Texto principal `#ffffff` em peso 200, a partir de 18px. Títulos em General Sans, peso 400, tracking -0.04em a partir de 42px.
 
-- Fundo da página: `--color-ink`. Céu e seções profundas: `--color-midnight`.
-- Cards e superfícies: `--color-asphalt`. Bordas e divisores: `--color-dusk`.
-- Texto principal: `--color-lamp`. Secundário: `--color-piano`. Legendas: `--color-lilac`.
-- CTA principal: `--color-dress`. Links e foco: `--color-spotlight`. Hover e seleção: `--color-velvet`.
-- Glow e bordas de destaque: `--color-neon`. Horizonte: `--color-ember` e `--color-rose`.
-- Atmosfera contínua: `--gradient-magic-hour`.
-- O wordmark usa `--color-wordmark` (`#FEFEFE`) e o símbolo `--color-mark` (`#662ECA`). Essas duas cores ficam no logo. Texto e botões continuam na paleta.
+O violeta é `#6B3FE0` (`--color-violet`), a cor do E. Entra no botão principal, no foco, no estado ativo e nas barras do E. Um botão violeta por tela, nunca dois lado a lado.
 
-Não introduza cinza neutro, branco puro ou acento fora desta paleta.
+A faísca `#F2C230` (`--color-spark`) fica nos rótulos e em no máximo uma palavra de destaque por seção.
+
+`#F08A6B` e `#0B1030` só na constelação, na barra de progresso e na mensagem de erro do formulário.
+
+Sem cards, bordas de seção, sombras ou cinza em texto peso 200. A linha `rgba(255,255,255,0.14)` só no formulário e no FAQ.
+
+General Sans na interface. JetBrains Mono só no que é técnico. O wordmark continua o arquivo `design/logo/asteria-wordmark.svg`. O E são três barras, a do meio mais curta e alinhada à esquerda.

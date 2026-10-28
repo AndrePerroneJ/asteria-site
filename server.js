@@ -1,6 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const { handleContact } = require("./server/contact");
 
 const root = path.resolve(__dirname, "dist");
 const port = Number(process.env.PORT) || 3000;
@@ -25,6 +26,8 @@ const types = {
 };
 
 const server = http.createServer((request, response) => {
+  if (handleContact(request, response)) return;
+
   const url = new URL(request.url, "http://127.0.0.1");
   let pathname = decodeURIComponent(url.pathname);
 
