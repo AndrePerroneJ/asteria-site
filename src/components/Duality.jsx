@@ -2,13 +2,13 @@ const PILLARS = [
   {
     index: "01",
     title: "A Hora Mágica",
-    kicker: "Direção de Arte",
+    kicker: "A arte",
     body: "Tipografia expressiva, ritmo visual, micro-interações fluidas e identidade autoral que afasta a marca de qualquer padrão genérico.",
   },
   {
     index: "02",
     title: "Arquitetura Defensiva",
-    kicker: "Engenharia",
+    kicker: "A fortaleza",
     body: "Sites projetados como fortalezas digitais desde a primeira linha de código, com blindagem de superfície web, políticas estritas de segurança (CSP/Headers), proteção contra vulnerabilidades e performance extrema.",
   },
 ];
@@ -16,9 +16,11 @@ const PILLARS = [
 export function Duality() {
   return (
     <section id="dualidade" className="border-b border-dusk bg-midnight" aria-labelledby="dualidade-title">
-      <h2 id="dualidade-title" className="sr-only">
-        A estética e a fortaleza
-      </h2>
+      <div className="border-b border-dusk px-5 py-8 md:px-12 lg:px-16">
+        <h2 id="dualidade-title" className="font-mono text-xs tracking-[0.2em] text-spotlight">
+          A dualidade
+        </h2>
+      </div>
       <div className="grid lg:grid-cols-2">
         {PILLARS.map((pillar, index) => (
           <article

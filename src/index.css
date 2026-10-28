@@ -110,6 +110,11 @@ body {
     0 0 28px var(--color-neon);
 }
 
+.scroll-progress {
+  height: 2px;
+  background: var(--gradient-magic-hour);
+}
+
 .hero-film {
   z-index: 0;
   opacity: 1;

@@ -11,6 +11,7 @@ export function Footer() {
           // é aqui que começa.
           <XiCaret />
         </p>
+        <p className="mt-4 max-w-[28ch] text-piano">A noite fecha aqui. O contato abre o próximo projeto.</p>
         <nav aria-label="Contato" className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 font-mono text-sm">
           <a className="text-spotlight hover:text-lamp" href="https://instagram.com/asteriacode" rel="noreferrer">
             @asteriacode

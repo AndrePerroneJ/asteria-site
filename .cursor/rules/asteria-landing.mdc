@@ -11,11 +11,13 @@ O wordmark oficial fica em arquivo. O E são três barras, a do meio mais curta 
 
 Landing em `src/`. Logo: `design/logo/asteria-wordmark.svg`. Não recriar o nome em texto.
 
-1. Header fixo — logo, `stars / griffith / la / home`, `[ Iniciar Projeto ]`.
-2. Palco — título, CTA `> npm run showtime`, terminal `asteria.js`.
-3. Dualidade — Hora Mágica e Arquitetura Defensiva, fundo `--color-midnight`.
-4. Especificações — quatro cards `--color-asphalt`.
-5. Sonho — `function dream()` e `RangeError`.
-6. Footer — logo, `// é aqui que começa.`, links em `--color-spotlight`.
+1. Header fixo — logo, `stars / griffith / la / home`, `[ Iniciar Projeto ]`. O header só aparece no scroll.
+2. Palco — vídeo de abertura, depois a logo parada e a seta para descer.
+3. Manifesto — o nome Asteria, pelo arquivo da logo, e o propósito em linguagem clara: estúdio boutique de design e segurança.
+4. Dualidade — a arte e a fortaleza, em tom técnico. Fundo `--color-midnight`.
+5. Especificações — grelha assimétrica com o que o cliente leva: zero brechas, velocidade, estética autoral, infraestrutura protegida.
+6. Repertório — peças com imagem real. Sem inventar nome, ano ou cliente.
+7. Sonho — `function dream()` e `RangeError`.
+8. Footer — fecha a noite e convida ao contato. Logo, `// é aqui que começa.`, links em `--color-spotlight`.
 
 Títulos em Kharms Display. Texto em Inter. Código e metadados em JetBrains Mono. O cursor da marca é o Ξ em `--color-neon`.

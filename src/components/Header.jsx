@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Logo } from "./Logo.jsx";
 
 const PATH = [
-  ["stars", "#palco"],
+  ["stars", "#manifesto"],
   ["griffith", "#dualidade"],
-  ["la", "#especificacoes"],
+  ["la", "#repertorio"],
   ["home", "#contato"],
 ];
 
